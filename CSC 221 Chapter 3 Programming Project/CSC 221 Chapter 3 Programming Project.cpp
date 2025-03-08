@@ -1,5 +1,17 @@
 // CSC 221 Chapter 3 Programming Project.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
+// Project 1: Ingredient Adjuster
+// A recipe calls for the following ingredients to make 48 cookies:
+//  a. 1.5 cups of sugar
+//  b. 1 cup of butter
+//  c. 2.75 cups of flour
+// Write a program that asks the user how many cookies they want to make and displays the required amount of ingredients.
+// 
+// Begin by defining the constant values for each ingredient needed to bake 48 cookies.
+// Enter the number of cookies the user wants to make.
+// Calculate the required amount for x ingredient using the formula: (x_per_48 / base_cookies) * num_cookies
+// Display the required amount of each ingredient.
+// End the program with a return 0 statement.
 
 #include <iostream>
 using namespace std;
