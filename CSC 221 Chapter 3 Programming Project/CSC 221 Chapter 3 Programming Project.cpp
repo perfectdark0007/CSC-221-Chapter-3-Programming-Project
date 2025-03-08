@@ -1,43 +1,55 @@
 // CSC 221 Chapter 3 Programming Project.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
-// Project 1: Ingredient Adjuster
-// A recipe calls for the following ingredients to make 48 cookies:
-//  a. 1.5 cups of sugar
-//  b. 1 cup of butter
-//  c. 2.75 cups of flour
-// Write a program that asks the user how many cookies they want to make and displays the required amount of ingredients.
+// Project 2: Math Tutor
+// Write a program to generate a simple addition problem and check the user's answer.
 // 
-// Begin by defining the constant values for each ingredient needed to bake 48 cookies.
-// Enter the number of cookies the user wants to make.
-// Calculate the required amount for x ingredient using the formula: (x_per_48 / base_cookies) * num_cookies
-// Display the required amount of each ingredient.
+// Begin seeding the random number generator with the current time to ensure different results each time.
+// Generate two random numbers between 1 and 100.
+// Have user enter their answer to the addition problem.
+// Solve the addition problem.
+// Display if correct or incorrect along with correct answer.
 // End the program with a return 0 statement.
 
 #include <iostream>
+#include <cstdlib>   // For rand() and srand()
+#include <ctime>     // For time()
+
 using namespace std;
 
 int main() {
-    // Given recipe ingredients for 48 cookies
-    const double sugar_per_48 = 1.5;
-    const double butter_per_48 = 1.0;
-    const double flour_per_48 = 2.75;
-    const int base_cookies = 48;
+    // Seed the random number generator with the current time
+    srand(time(0));
 
-    // Ask user for the desired number of cookies
-    int num_cookies;
-    cout << "Enter the number of cookies you want to make: ";
-    cin >> num_cookies;
+    // Generate two random numbers between 1 and 100
+    int num1 = rand() % 100 + 1;
+    int num2 = rand() % 100 + 1;
+    int userAnswer;
 
-    // Calculate required ingredients
-    double sugar_needed = (sugar_per_48 / base_cookies) * num_cookies;
-    double butter_needed = (butter_per_48 / base_cookies) * num_cookies;
-    double flour_needed = (flour_per_48 / base_cookies) * num_cookies;
+    // Display the math problem
+    cout << "Solve the following addition problem:\n";
+    cout << "  " << num1 << "\n";
+    cout << "+ " << num2 << "\n";
+    cout << "--------" << endl;
 
-    // Display the results
-    cout << "You will need:\n";
-    cout << sugar_needed << " cups of sugar\n";
-    cout << butter_needed << " cups of butter\n";
-    cout << flour_needed << " cups of flour\n";
+    // Prompt the user to enter their answer
+    cout << "Enter your answer: ";
+    cin >> userAnswer;
+
+    // Pause and wait for the user to press Enter
+    cout << "\nPress Enter to check the correct answer...";
+    cin.ignore();  // Ignore any leftover newline character
+    cin.get();     // Wait for user to press Enter
+
+    // Display the correct answer
+    cout << "\nThe correct answer is: " << (num1 + num2) << endl;
+
+    // Check if the student's answer was correct
+    if (userAnswer == num1 + num2) {
+        cout << "Correct!\n";
+    }
+    else {
+        cout << "Oops! Practice makes perfect.\n";
+    }
 
     return 0;
 }
