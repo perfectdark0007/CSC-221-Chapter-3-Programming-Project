@@ -3,8 +3,10 @@
 
 #include <iostream>
 
-int main()
-{
-    std::cout << "Hello Professor Schaffner, hopefully this works!\n";
+int main() {
+    // Display project title
+    std::cout << "William Woodard's Chapter 3 Programming Project" << std::endl;
+    std::cout << "-----------------------------------------------" << std::endl;
+    return 0;
 }
 
