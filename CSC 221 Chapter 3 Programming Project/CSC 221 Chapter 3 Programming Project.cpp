@@ -36,7 +36,7 @@ int main() {
     cin >> userAnswer;
 
     // Pause and wait for the user to press Enter
-    cout << "\nPress Enter to check the correct answer...";
+    cout << "\nPress Enter to check answer...";
     cin.ignore();  // Ignore any leftover newline character
     cin.get();     // Wait for user to press Enter
 
